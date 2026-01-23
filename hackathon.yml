@@ -1,0 +1,22 @@
+version: 1
+
+backend:
+  working_dir: backend
+
+  env:
+    example_file: .env.example
+    output_file: .env
+
+  install:
+    - npm install
+
+  run:
+    - npm start
+
+server:
+  base_url: http://localhost:8080
+  health_endpoint: /health
+
+timeouts:
+  startup: 60
+  request: 30
