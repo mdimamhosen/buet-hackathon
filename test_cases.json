@@ -1,0 +1,435 @@
+[
+  {
+    "question": "In the last 30 days, how much money came in from customers?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[106887.23]]
+    }
+  },
+  {
+    "question": "As of today, how much money are customers still supposed to pay us?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[155973.7]]
+    }
+  },
+  {
+    "question": "Which customer has given us the most money so far? Give me their name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Acme Inc"]]
+    }
+  },
+  {
+    "question": "Which single bill is the most overdue right now? If there are ties, pick the one with the highest amount. Give me the invoice number.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["INV-000032"]]
+    }
+  },
+  {
+    "question": "How many bills are overdue as of today?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[13]]
+    }
+  },
+  {
+    "question": "Which customer currently owes us the most money? Give me their name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Apex Industries"]]
+    }
+  },
+  {
+    "question": "Who created the most orders? Give me the employee's full name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Katherine Williams"]]
+    }
+  },
+  {
+    "question": "Whose orders led to the most billed money? Give me the employee's full name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Katherine Williams"]]
+    }
+  },
+  {
+    "question": "Which manager's team (direct reports only) brought in the most billed money? Give me the manager's full name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Isabella Williams"]]
+    }
+  },
+  {
+    "question": "Which department brought in the most billed money? Give me the department name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Information Technology"]]
+    }
+  },
+  {
+    "question": "What is our most sold product by quantity? Give me the SKU.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["SKU-NET-0014"]]
+    }
+  },
+  {
+    "question": "Which product made us the most money from order line items? Give me the product name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Desktop Workstation"]]
+    }
+  },
+  {
+    "question": "Which customer bought from the widest variety of product categories? Give me the customer name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Summit Services"]]
+    }
+  },
+  {
+    "question": "For payroll run #3, how much total net pay did we pay employees?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[162295.48]]
+    }
+  },
+  {
+    "question": "For payroll run #3, which department had the highest total take-home pay? Give me the department name.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Sales"]]
+    }
+  },
+  {
+    "question": "List all active employees in the Sales department (id, code, first name, last name, email, hire date). Show newest hires first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [1, "EMP0001", "Samuel", "Anderson", "samuel.anderson@company.com", "2024-09-08T00:00:00Z"],
+        [11, "EMP0011", "Patrick", "Williams", "patrick.williams@company.com", "2024-09-02T00:00:00Z"],
+        [7, "EMP0007", "Victor", "Perez", "victor.perez@company.com", "2024-01-24T00:00:00Z"],
+        [22, "EMP0022", "Olivia", "Harris", "olivia.harris@company.com", "2023-09-12T00:00:00Z"],
+        [15, "EMP0015", "Katherine", "Taylor", "katherine.taylor@company.com", "2023-09-03T00:00:00Z"],
+        [16, "EMP0016", "Samuel", "Williams", "samuel.williams@company.com", "2023-05-09T00:00:00Z"]
+      ]
+    }
+  },
+  {
+    "question": "Find products (id, sku, name) that are inactive but have been sold at least once.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [6, "SKU-ACC-0006", "USB-C Hub"],
+        [15, "SKU-NET-0015", "WiFi Router Enterprise"],
+        [18, "SKU-SOF-0018", "Office Suite License"]
+      ]
+    }
+  },
+  {
+    "question": "List the 10 most recently created customers (id, code, name, email, creation date). Most recent first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [26, "CUST0026", "Elite Enterprises", "contact@eliteenterprises.com", "2024-12-31T00:00:00Z"],
+        [27, "CUST0027", "Northern Industries", "contact@northernindustries.com", "2024-12-24T00:00:00Z"],
+        [18, "CUST0018", "Premier Inc", "contact@premierinc.com", "2024-12-14T00:00:00Z"],
+        [11, "CUST0011", "Apex Systems", "contact@apexsystems.com", "2024-11-29T00:00:00Z"],
+        [21, "CUST0021", "Elite LLC", "contact@elitellc.com", "2024-11-19T00:00:00Z"],
+        [22, "CUST0022", "Northern Industries", "contact@northernindustries.com", "2024-10-06T00:00:00Z"],
+        [6, "CUST0006", "Northern LLC", "contact@northernllc.com", "2024-09-18T00:00:00Z"],
+        [2, "CUST0002", "Acme Services", "contact@acmeservices.com", "2024-09-01T00:00:00Z"],
+        [7, "CUST0007", "Nexus Partners", "contact@nexuspartners.com", "2024-07-20T00:00:00Z"],
+        [20, "CUST0020", "Northern Industries", "contact@northernindustries.com", "2024-06-07T00:00:00Z"]
+      ]
+    }
+  },
+  {
+    "question": "List the top 10 customers (id, name, total paid amount) by total invoiced amount from Paid invoices only. Highest paid amount first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [9, "Acme Inc", 59504.44],
+        [10, "Horizon Technologies", 29886.53],
+        [24, "Atlantic LLC", 25013.56],
+        [18, "Premier Inc", 21668.8],
+        [5, "Pacific Partners", 16901.74],
+        [4, "Summit Services", 11026.44],
+        [16, "Northern LLC", 8092.61],
+        [27, "Northern Industries", 7137.43],
+        [30, "Prime Systems", 4908.99],
+        [3, "Global Partners", 3039.82]
+      ]
+    }
+  },
+  {
+    "question": "Show the monthly revenue trend (month, revenue) for the last 24 months from Paid invoices. Earliest month first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        ["2024-01-01T00:00:00Z", 1160.85],
+        ["2024-02-01T00:00:00Z", 11026.44],
+        ["2024-04-01T00:00:00Z", 12555.35],
+        ["2024-06-01T00:00:00Z", 12117.96],
+        ["2024-08-01T00:00:00Z", 53765.64],
+        ["2024-11-01T00:00:00Z", 16260.99]
+      ]
+    }
+  },
+  {
+    "question": "Which sales reps created orders and what is their total invoiced value? Show employee id, full name, number of orders created, and total invoiced amount. Highest invoiced value first, then by most orders.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [14, "Quinn Brown", 9, 101566.23],
+        [20, "Katherine Williams", 12, 99270.48],
+        [2, "Grace White", 8, 73966.1],
+        [19, "Samuel Jackson", 10, 51664.85],
+        [23, "Rachel Thomas", 11, 28685.89]
+      ]
+    }
+  },
+  {
+    "question": "What is the average order value per customer based on invoice totals, excluding voided invoices? Only include customers with 2 or more invoices. Show customer id, name, average order value, and invoice count. Highest average first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [9, "Acme Inc", 29752.22, 2],
+        [23, "Apex Industries", 20372.6, 2],
+        [10, "Horizon Technologies", 14943.26, 2],
+        [18, "Premier Inc", 10834.4, 2],
+        [24, "Atlantic LLC", 9328.18, 3],
+        [5, "Pacific Partners", 8450.87, 2],
+        [4, "Summit Services", 7993.74, 2],
+        [1, "Horizon Systems", 4627.23, 2],
+        [25, "Summit Systems", 4191.38, 3],
+        [16, "Northern LLC", 4046.3, 2],
+        [3, "Global Partners", 3019.84, 2]
+      ]
+    }
+  },
+  {
+    "question": "List the top 5 best-selling products by quantity sold. Show product id, sku, name, total quantity sold, and total revenue from line items. Highest quantity first, then by revenue.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [14, "SKU-NET-0014", "Ethernet Switch 24-port", 135, 24221.79],
+        [15, "SKU-NET-0015", "WiFi Router Enterprise", 116, 32038.87],
+        [16, "SKU-NET-0016", "CAT6 Cable Bundle", 114, 3925.75],
+        [19, "SKU-SER-0019", "Cloud Backup Service", 110, 10882.33],
+        [2, "SKU-ELE-0002", "Desktop Workstation", 106, 195348.55]
+      ]
+    }
+  },
+  {
+    "question": "List the top 5 products with the highest average discount per unit. Show product id, sku, name, and average discount per unit. Highest discount first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [2, "SKU-ELE-0002", "Desktop Workstation", 49.23],
+        [20, "SKU-SER-0020", "IT Support Package", 36.8],
+        [14, "SKU-NET-0014", "Ethernet Switch 24-port", 10.14],
+        [8, "SKU-FUR-0008", "Standing Desk", 8.61],
+        [9, "SKU-FUR-0009", "Filing Cabinet", 8.51]
+      ]
+    }
+  },
+  {
+    "question": "List all customers who purchased from at least 3 different product categories. Show customer id, name, and number of categories. Most categories first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [4, "Summit Services", 6],
+        [1, "Horizon Systems", 5],
+        [7, "Nexus Partners", 5],
+        [10, "Horizon Technologies", 5],
+        [18, "Premier Inc", 5],
+        [19, "Northern Systems", 5],
+        [25, "Summit Systems", 5],
+        [27, "Northern Industries", 5],
+        [28, "Atlantic Inc", 5],
+        [15, "Global Enterprises", 4],
+        [5, "Pacific Partners", 4],
+        [23, "Apex Industries", 4],
+        [24, "Atlantic LLC", 4],
+        [11, "Apex Systems", 4],
+        [20, "Northern Industries", 4],
+        [21, "Elite LLC", 4],
+        [3, "Global Partners", 4],
+        [30, "Prime Systems", 3],
+        [26, "Elite Enterprises", 3],
+        [6, "Northern LLC", 3],
+        [16, "Northern LLC", 3]
+      ]
+    }
+  },
+  {
+    "question": "List all overdue invoices (unpaid or partially paid, past due date) with customer details. Show invoice id, invoice number, customer name, total amount, due date, and days overdue. Most overdue first, then by highest amount.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [32, "INV-000032", "Global Partners", 2999.85, "2023-05-10T00:00:00Z", 986],
+        [22, "INV-000022", "Northern Systems", 5382.08, "2023-05-12T00:00:00Z", 984],
+        [27, "INV-000027", "Summit Services", 4961.04, "2023-06-06T00:00:00Z", 959],
+        [31, "INV-000031", "Atlantic Industries", 10011.95, "2023-06-23T00:00:00Z", 942],
+        [34, "INV-000034", "Horizon Systems", 8687.61, "2023-07-05T00:00:00Z", 930],
+        [15, "INV-000015", "Atlantic LLC", 2970.97, "2023-08-03T00:00:00Z", 901],
+        [20, "INV-000020", "Summit Systems", 11393.86, "2023-09-17T00:00:00Z", 856],
+        [35, "INV-000035", "Elite LLC", 11932.84, "2023-11-19T00:00:00Z", 793],
+        [6, "INV-000006", "Atlantic Inc", 27645.51, "2024-03-27T00:00:00Z", 664],
+        [25, "INV-000025", "Pacific Enterprises", 194.18, "2024-05-08T00:00:00Z", 622],
+        [2, "INV-000002", "Global Enterprises", 30597.65, "2024-09-19T00:00:00Z", 488],
+        [8, "INV-000008", "Summit Systems", 19.42, "2024-09-19T00:00:00Z", 488],
+        [4, "INV-000004", "Apex Industries", 39176.74, "2024-12-17T00:00:00Z", 399]
+      ]
+    }
+  },
+  {
+    "question": "List customers with outstanding balance over 10000 from unpaid or partially paid invoices. Show customer id, name, and total outstanding. Highest outstanding first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [23, "Apex Industries", 39176.74],
+        [15, "Global Enterprises", 30597.65],
+        [28, "Atlantic Inc", 27645.51],
+        [21, "Elite LLC", 11932.84],
+        [25, "Summit Systems", 11413.28],
+        [14, "Atlantic Industries", 10011.95]
+      ]
+    }
+  },
+  {
+    "question": "Show total payroll cost by department for payroll run #3. Include department id, department name, and total net pay. Highest total first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [1, "Sales", 44148.53],
+        [3, "Accounts", 36807.78],
+        [2, "Human Resources", 35019.86],
+        [5, "Information Technology", 29211.44],
+        [4, "Administration", 17107.87]
+      ]
+    }
+  },
+  {
+    "question": "List employees whose net pay in payroll run #3 deviates more than 20% from their basic salary. Show employee id, code, first name, last name, basic salary, net pay, and deviation ratio. Largest absolute deviation first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [3, "EMP0003", "Noah", "Hernandez", 95071.96, 6216.33, -0.93],
+        [13, "EMP0013", "Yolanda", "Perez", 110433.57, 7355.01, -0.93],
+        [11, "EMP0011", "Patrick", "Williams", 123921.22, 8347.08, -0.93],
+        [14, "EMP0014", "Quinn", "Brown", 106173.97, 7196.74, -0.93],
+        [25, "EMP0025", "Patrick", "Miller", 106528.12, 7320.39, -0.93],
+        [1, "EMP0001", "Samuel", "Anderson", 86558.67, 5985.18, -0.93],
+        [18, "EMP0018", "Victor", "Perez", 48544.58, 3365.3, -0.93],
+        [12, "EMP0012", "Maria", "Lee", 140254.58, 9787.48, -0.93],
+        [16, "EMP0016", "Samuel", "Williams", 37076.38, 2611.86, -0.93],
+        [24, "EMP0024", "Bob", "Perez", 144845.69, 10240.76, -0.93],
+        [2, "EMP0002", "Grace", "White", 41613.22, 2955.58, -0.93],
+        [7, "EMP0007", "Victor", "Perez", 131038.88, 9322.81, -0.93],
+        [23, "EMP0023", "Rachel", "Thomas", 43356.35, 3087.84, -0.93],
+        [15, "EMP0015", "Katherine", "Taylor", 141510.53, 10099.67, -0.93],
+        [5, "EMP0005", "James", "Perez", 81137.16, 5799.08, -0.93],
+        [10, "EMP0010", "Henry", "Harris", 142847.6, 10216.02, -0.93],
+        [8, "EMP0008", "Wendy", "Jackson", 83049.41, 5948.73, -0.93],
+        [19, "EMP0019", "Samuel", "Jackson", 84969.52, 6092.92, -0.93],
+        [21, "EMP0021", "Samuel", "Taylor", 40712.3, 2926.13, -0.93],
+        [22, "EMP0022", "Olivia", "Harris", 108183.49, 7781.93, -0.93],
+        [4, "EMP0004", "David", "Lopez", 131081.23, 9688.19, -0.93],
+        [17, "EMP0017", "Patrick", "Jackson", 147505.4, 10928.82, -0.93],
+        [6, "EMP0006", "David", "Wilson", 39879.62, 2986.21, -0.93],
+        [9, "EMP0009", "Isabella", "Williams", 79663.16, 6035.42, -0.92]
+      ]
+    }
+  },
+  {
+    "question": "For each department, how much revenue came from orders created by its employees (exclude voided invoices)? Show department id, name, and total invoiced. Highest revenue first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [5, "Information Technology", 168388.52],
+        [3, "Accounts", 97710.96],
+        [2, "Human Resources", 80350.74]
+      ]
+    }
+  },
+  {
+    "question": "Show the manager leaderboard based on invoiced value created by their direct reports (exclude voided invoices). Include manager id, manager's full name, and team's total invoiced value. Highest value first.",
+    "result_type": "table",
+    "expected": {
+      "rows": [
+        [9, "Isabella Williams", 98784.58],
+        [3, "Noah Hernandez", 97710.96],
+        [1, "Samuel Anderson", 51664.85],
+        [6, "David Wilson", 28685.89]
+      ]
+    }
+  },
+  {
+    "question": "What was the EUR to USD exchange rate on January 15, 2024?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[1.0945]]
+    }
+  },
+  {
+    "question": "What is the full currency name for the symbol 'CHF'?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [["Swiss Franc"]]
+    }
+  },
+  {
+    "question": "How many currencies are supported by the Frankfurter currency API?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[30]]
+    }
+  },
+  {
+    "question": "What is the latitude of Denver, Colorado according to OpenStreetMap?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[39.7392364]]
+    }
+  },
+  {
+    "question": "What is the longitude of Denver, Colorado according to OpenStreetMap?",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[-104.984862]]
+    }
+  },
+  {
+    "question": "For payroll run #3, what was the total net pay converted to USD? Use the EUR to USD exchange rate from January 15, 2024.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[177592.4]]
+    }
+  },
+  {
+    "question": "What is Samuel Anderson's basic salary converted to Japanese Yen? Use the EUR to JPY rate from January 15, 2024.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[13822654.32]]
+    }
+  },
+  {
+    "question": "What is Apex Industries' total outstanding balance converted to British Pounds? Use the EUR to GBP rate from January 15, 2024.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[33720.6]]
+    }
+  },
+  {
+    "question": "What is the total amount paid by our top customer (Acme Inc) converted to USD? Use the EUR to USD rate from January 15, 2024.",
+    "result_type": "scalar",
+    "expected": {
+      "rows": [[65125.61]]
+    }
+  }
+]
